@@ -1,11 +1,10 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import { IoMdCar } from 'react-icons/io';
-import { GiHamburgerMenu } from 'react-icons/gi';
 
 function NavBar() {
   return (
-    <nav className="font-inter text-lg flex gap-2 items-center py-3 xl:px-40 lg:px-10 px-5 font-semibold">
+    <nav className="font-inter text-lg flex gap-2 items-center py-4 xl:px-40 lg:px-10 px-5 font-semibold">
         <Link to="/"><IoMdCar size={40} className="text-primary" /></Link>
         <h1 className="text-2xl font-bold">Auto<span className="text-primary">Escuela</span></h1>
         <ul className='flex gap-10 grow justify-end items-center'>
