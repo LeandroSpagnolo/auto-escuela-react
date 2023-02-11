@@ -1,9 +1,9 @@
-import NavBar from "./NavBar";
+import NavBar from "./components/NavBar";
 import {Route, Routes} from "react-router-dom"
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import Teoria from "./pages/Teoria";
-import Prueba from "./pages/Prueba";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
+import Teoria from "./components/Teoria";
+import Prueba from "./components/Prueba";
 
 
 function App() {
