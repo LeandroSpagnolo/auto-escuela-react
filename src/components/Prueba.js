@@ -7,48 +7,35 @@ function Prueba() {
 
   const preguntas = [
     {
-      text: "What is the capital of America?",
+      text: "Si circulo en una ruta detrás de un camión, y éste hace señas manuales y/o con la luz de giro derecha para que lo pase, ¿qué se debe hacer?",
       options: [
-        { id: 0, text: "New York City", isCorrect: false },
-        { id: 1, text: "Boston", isCorrect: false },
-        { id: 2, text: "Santa Fe", isCorrect: false },
-        { id: 3, text: "Washington DC", isCorrect: true },
+        { id: 0, text: "Inicio el adelantamiento con total seguridad.", isCorrect: false },
+        { id: 1, text: "Espero en mi carril hasta que el camión encienda la luz de giro izquierda.", isCorrect: false },
+        { id: 2, text: "Quedarse en el carril hasta que con los propios ojos se observa el camino y se comprueba que se tiene la vía libre en una distancia suficiente para evitar todo riesgo al sobrepasar.", isCorrect: true },
       ],
     },
     {
-      text: "What year was the Constitution of America written?",
+      text: "¿Qué indican las señales horizontales de líneas longitudinales continuas?",
       options: [
-        { id: 0, text: "1787", isCorrect: true },
-        { id: 1, text: "1776", isCorrect: false },
-        { id: 2, text: "1774", isCorrect: false },
-        { id: 3, text: "1826", isCorrect: false },
+        { id: 0, text: "Sólo si son de color amarillo, indican que no debe ser traspasada ni se puede circular sobre ellas.", isCorrect: true },
+        { id: 1, text: "Independientemente del color, amarillo o blanco, indican que no debe ser traspasada ni se puede circular sobre ellas.", isCorrect: false },
+        { id: 2, text: "Indican los carriles o zonas de circulación.", isCorrect: false },
       ],
     },
     {
-      text: "Who was the second president of the US?",
+      text: "¿Cuál es la velocidad máxima en ciudad para un automóvil en calles?",
       options: [
-        { id: 0, text: "John Adams", isCorrect: true },
-        { id: 1, text: "Paul Revere", isCorrect: false },
-        { id: 2, text: "Thomas Jefferson", isCorrect: false },
-        { id: 3, text: "Benjamin Franklin", isCorrect: false },
+        { id: 0, text: "40km/h.", isCorrect: true },
+        { id: 1, text: "50km/h.", isCorrect: false },
+        { id: 2, text: "60km/h.", isCorrect: false },
       ],
     },
     {
-      text: "What is the largest state in the US?",
+      text: "Una pick-up traslada fardos de pasto, traslada carga:",
       options: [
-        { id: 0, text: "California", isCorrect: false },
-        { id: 1, text: "Alaska", isCorrect: true },
-        { id: 2, text: "Texas", isCorrect: false },
-        { id: 3, text: "Montana", isCorrect: false },
-      ],
-    },
-    {
-      text: "Which of the following countries DO NOT border the US?",
-      options: [
-        { id: 0, text: "Canada", isCorrect: false },
-        { id: 1, text: "Russia", isCorrect: true },
-        { id: 2, text: "Cuba", isCorrect: true },
-        { id: 3, text: "Mexico", isCorrect: false },
+        { id: 0, text: "Liviana.", isCorrect: true },
+        { id: 1, text: "General.", isCorrect: false },
+        { id: 2, text: "Volátil.", isCorrect: false },
       ],
     },
   ];
