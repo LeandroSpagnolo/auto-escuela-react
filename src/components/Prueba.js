@@ -26,36 +26,54 @@ function Prueba() {
 
   const mostrarPreguntas = () =>{
     return (
-      <div>
+      <div class="lg:m-none mx-8">
         {
-        preguntas.map( pregunta => {
+        preguntas.map( (pregunta,index) => {
           return (
             <div class="my-10">
               <h2 class="text-secondary font-semibold">
-                Pregunta: {preguntaActual + 1} de {preguntas.length}
+                Pregunta: {index + 1} de {preguntas.length}
               </h2>
               <h3 class="my-2 text-lg">{pregunta.text}</h3>
-              <ul>
                 {pregunta.options.map((option) => {
                   return (
-                    <li class="flex items-center py-3 gap-3">
-                      <button key={option.id}
-                      onClick={() => opcionClickeada(option.isCorrect)}
-                      class="btn btn-circle btn-outline btn-xs btn-secondary">
-    
-                      </button>
-                      
-                      <p>{option.text}</p>
-                    </li>
+                    <div class="form-control">
+                      <label class="cursor-pointer flex gap-3 my-2 items-center">
+                        <input type="radio" name={index} value="0" class="radio checked:bg-secondary focus:ml-2 transition"/>
+                        <span class="label-text md:text-sm text-lg">{option.text}</span> 
+                      </label>
+                    </div>
                   );
                 })}
-              </ul>
             </div>
           )
         })
         }
       </div>
     )
+  }
+
+  const getIdCorrecta = (index) =>{
+      preguntas[index].options.map(pregunta => {
+        if(pregunta.isCorrect) {
+          return pregunta.id;
+        }
+      })
+  }
+
+
+  const sumbit = () =>{
+    for (var index = 0, maxLenght = preguntas.lenght; index < maxLenght; index++) {
+      var radios = document.getElementsByName(index);
+
+      for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked && i == getIdCorrecta(index)) {
+          setPuntaje(puntaje+1);
+        }
+      }
+    }
+
+    setMostrarResultados(true);
   }
   
   
@@ -83,8 +101,12 @@ function Prueba() {
           <button class="btn btn-error m-10" onClick={() => reiniciarJuego()}><VscDebugRestart size={20} class="mr-1"/>Reiniciar</button>
         </div>
       ) : (
-          <div>
+          <div class="flex flex-col items-center">
+            
             {mostrarPreguntas()}
+            
+
+            <button class="btn btn-primary px-8 mb-20">Sumbit</button>
           </div>
           
       )}
