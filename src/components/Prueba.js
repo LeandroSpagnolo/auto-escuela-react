@@ -7,7 +7,7 @@ preguntas = preguntas.lista
 
 function Prueba() {
   const [mostrarResultados, setMostrarResultados] = useState(false);
-  const [pregutaActual, setPreguntaActual] = useState(0);
+  const [preguntaActual, setPreguntaActual] = useState(0);
   const [puntaje, setPuntaje] = useState(0);
 
   
@@ -17,12 +17,46 @@ function Prueba() {
       setPuntaje(puntaje + 1);
     }
 
-    if (pregutaActual + 1 < preguntas.length) {
-      setPreguntaActual(pregutaActual + 1);
+    if (preguntaActual + 1 < preguntas.length) {
+      setPreguntaActual(preguntaActual + 1);
     } else {
       setMostrarResultados(true);
     }
   };
+
+  const mostrarPreguntas = () =>{
+    return (
+      <div>
+        {
+        preguntas.map( pregunta => {
+          return (
+            <div class="my-10">
+              <h2 class="text-secondary font-semibold">
+                Pregunta: {preguntaActual + 1} de {preguntas.length}
+              </h2>
+              <h3 class="my-2 text-lg">{pregunta.text}</h3>
+              <ul>
+                {pregunta.options.map((option) => {
+                  return (
+                    <li class="flex items-center py-3 gap-3">
+                      <button key={option.id}
+                      onClick={() => opcionClickeada(option.isCorrect)}
+                      class="btn btn-circle btn-outline btn-xs btn-secondary">
+    
+                      </button>
+                      
+                      <p>{option.text}</p>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )
+        })
+        }
+      </div>
+    )
+  }
   
   
 
@@ -34,9 +68,9 @@ function Prueba() {
   };
 
   return (
-    <div class="flex flex-col items-center gap-10 m-8 md:w-1/2">
+    <div class="flex flex-col items-center mt-2 md:w-1/2">
       {/* Header  */}
-      <h1 class="text-2xl my-6 font-semibold text-primary">Preguntas B1</h1>
+      <h1 class="text-2xl font-semibold text-primary">Preguntas B1</h1>
 
       {mostrarResultados ? (
         /* Resultado Final */
@@ -49,14 +83,27 @@ function Prueba() {
           <button class="btn btn-error m-10" onClick={() => reiniciarJuego()}><VscDebugRestart size={20} class="mr-1"/>Reiniciar</button>
         </div>
       ) : (
-        /*Preguntas */
+          <div>
+            {mostrarPreguntas()}
+          </div>
+          
+      )}
+    </div>
+  );
+}
+
+export default Prueba
+
+
+/*
+
         <div>
           <h2 class="text-secondary font-semibold">
-            Pregunta: {pregutaActual + 1} de {preguntas.length}
+            Pregunta: {preguntaActual + 1} de {preguntas.length}
           </h2>
-          <h3 class="my-2 text-lg">{preguntas[pregutaActual].text}</h3>
+          <h3 class="my-2 text-lg">{pregunta.text}</h3>
           <ul>
-            {preguntas[pregutaActual].options.map((option) => {
+            {pregunta.options.map((option) => {
               return (
                 <li class="flex items-center py-3 gap-3">
                   <button key={option.id}
@@ -71,9 +118,5 @@ function Prueba() {
             })}
           </ul>
         </div>
-      )}
-    </div>
-  );
-}
 
-export default Prueba
+*/
