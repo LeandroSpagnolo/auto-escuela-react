@@ -60,9 +60,9 @@ function Prueba() {
   };
 
   return (
-    <div>
+    <div class="m-8">
       {/* Header  */}
-      <h1>Preguntas B1</h1>
+      <h1 class="text-2xl my-6 font-semibold text-primary">Preguntas B1</h1>
 
       {mostrarResultados ? (
         /* Resultado Final */
@@ -77,18 +77,21 @@ function Prueba() {
       ) : (
         /*Preguntas */
         <div>
-          <h2>
+          <h2 class="text-secondary font-semibold">
             Pregunta: {pregutaActual + 1} de {preguntas.length}
           </h2>
-          <h3>{preguntas[pregutaActual].text}</h3>
+          <h3 class="my-2 text-lg">{preguntas[pregutaActual].text}</h3>
           <ul>
             {preguntas[pregutaActual].options.map((option) => {
               return (
-                <li
-                  key={option.id}
+                <li class="flex items-center py-3 gap-3">
+                  <button key={option.id}
                   onClick={() => opcionClickeada(option.isCorrect)}
-                >
-                  {option.text}
+                  class="btn btn-circle btn-outline btn-sm btn-secondary">
+
+                  </button>
+                  
+                  <p>{option.text}</p>
                 </li>
               );
             })}
