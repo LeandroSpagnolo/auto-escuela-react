@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { VscDebugRestart } from 'react-icons/vsc'
 
 function Prueba() {
   const [mostrarResultados, setMostrarResultados] = useState(false);
@@ -60,19 +61,19 @@ function Prueba() {
   };
 
   return (
-    <div class="m-8">
+    <div class="flex flex-col items-center gap-10 m-8 md:w-1/2">
       {/* Header  */}
       <h1 class="text-2xl my-6 font-semibold text-primary">Preguntas B1</h1>
 
       {mostrarResultados ? (
         /* Resultado Final */
-        <div>
-          <h1>Resultado Final</h1>
-          <h2>
-            {puntaje} de {preguntas.length} correctas - (
-            {(puntaje / preguntas.length) * 100}%)
-          </h2>
-          <button onClick={() => reiniciarJuego()}>Reiniciar el juego</button>
+        <div class="text-center">
+          <h1 class="text-xl font-semibold text-secondary m-5">Resultado Final</h1>
+          <div class="text-lg font-semibold text-success m-5">
+          <span class="text-4xl">{puntaje}</span> de <span class="text-4xl">{preguntas.length}</span> 
+          <p>correctas</p></div>
+          <h1 class="text-success text-9xl font-bold animate-pulse m-4">{(puntaje / preguntas.length) * 100}%</h1>          
+          <button class="btn btn-error m-10" onClick={() => reiniciarJuego()}><VscDebugRestart size={20} class="mr-1"/>Reiniciar</button>
         </div>
       ) : (
         /*Preguntas */

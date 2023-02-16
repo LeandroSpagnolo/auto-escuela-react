@@ -10,12 +10,14 @@ function App() {
   return (
     <div>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Teoria" element={<Teoria />} />
-        <Route path="/Prueba" element={<Prueba />} />
-      </Routes>
+      <div class="flex justify-center">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
+          <Route path="/Teoria" element={<Teoria />} />
+          <Route path="/Prueba" element={<Prueba />} />
+        </Routes>
+      </div>
     </div>
   );
 }
